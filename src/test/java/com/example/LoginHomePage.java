@@ -9,9 +9,12 @@ public class LoginHomePage extends BrowserFactory {
     WebDriver driver;
     POM pom;
 
+    public LoginHomePage() throws Exception {
+    }
+
     @BeforeTest
     public void initBrowser() throws Exception {
-        driver=openBrowser("safari");
+        driver=openBrowser();
         pom=new POM(driver);
     }
     @Test

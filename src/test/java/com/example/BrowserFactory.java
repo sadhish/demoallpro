@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.utils.ConfigFileReader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -9,7 +10,15 @@ public class BrowserFactory {
 
 
     WebDriver driver;
-    public WebDriver openBrowser(String browser) throws Exception {
+    public static String browser;
+    ConfigFileReader configFileReader=new ConfigFileReader();
+
+    public BrowserFactory() throws Exception {
+        browser=configFileReader.getBrowserName();
+    }
+
+
+    public WebDriver openBrowser() throws Exception {
 
         switch (browser.toLowerCase()){
             case "chrome":
