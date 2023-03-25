@@ -21,8 +21,5 @@ public class ConfigFileReader {
       return (String) properties.get("browser");
     }
 
-    public static void main(String[] args) throws Exception {
-      ConfigFileReader configFileReader=new ConfigFileReader();
-      configFileReader.getBrowserName();
-    }
+
 }
